@@ -12,8 +12,9 @@
     </div>
     <div class="card card-body mb-3">
         <div class="card-block">
-            <div class="table">
-                <table class="table table-sm table-condensed">
+            <div class="table-responsive">
+                <table class="table table-sm caption-top">
+                    <caption>Lista de clientes</caption>
                     <thead>
                     <tr>
                         <th>Nome</th>

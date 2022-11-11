@@ -1,5 +1,5 @@
 <?php require APP_ROOT . '/views/inc/header.php' ?>
-<div class="jumbotron jumbrotron-fluid">
+<div class="h-100 p-5 text-bg-dark rounded-3">
     <div class="container">
         <h1 class="display-3"><?php echo $data['title']; ?></h1>
         <p class="lead">

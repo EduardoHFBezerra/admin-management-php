@@ -2,7 +2,6 @@
 
 class User
 {
-
     private $db;
 
     public function __construct()
@@ -12,11 +11,13 @@ class User
 
     public function register($data)
     {
-        $this->db->query('INSERT INTO users (name, email, password) values (:name, :email, :password)');
+        $this->db->query(
+            "INSERT INTO users (name, email, password) values (:name, :email, :password)"
+        );
         // Bind values
-        $this->db->bind(':name', $data['name']);
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':password', $data['password']);
+        $this->db->bind(":name", $data["name"]);
+        $this->db->bind(":email", $data["email"]);
+        $this->db->bind(":password", $data["password"]);
         // Execute
         if ($this->db->execute()) {
             return true;
@@ -27,11 +28,13 @@ class User
 
     public function addUser($data)
     {
-        $this->db->query('INSERT INTO users (name, email, password) values (:name, :email, :password)');
+        $this->db->query(
+            "INSERT INTO users (name, email, password) values (:name, :email, :password)"
+        );
         // Bind values
-        $this->db->bind(':name', $data['name']);
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':password', $data['password']);
+        $this->db->bind(":name", $data["name"]);
+        $this->db->bind(":email", $data["email"]);
+        $this->db->bind(":password", $data["password"]);
         // Execute
         if ($this->db->execute()) {
             return true;
@@ -42,9 +45,9 @@ class User
 
     public function deleteUser($id)
     {
-        $this->db->query('DELETE FROM users where id = :id');
+        $this->db->query("DELETE FROM users where id = :id");
         // Bind values
-        $this->db->bind(':id', $id);
+        $this->db->bind(":id", $id);
 
         // Execute
         if ($this->db->execute()) {
@@ -56,15 +59,15 @@ class User
 
     public function getloginInfo($email)
     {
-        $this->db->query('SELECT * from users where email = :email');
-        $this->db->bind(':email', $email);
+        $this->db->query("SELECT * from users where email = :email");
+        $this->db->bind(":email", $email);
         return $this->db->single();
     }
 
     public function login($email, $password)
     {
-        $this->db->query('SELECT * from users where email = :email');
-        $this->db->bind(':email', $email);
+        $this->db->query("SELECT * from users where email = :email");
+        $this->db->bind(":email", $email);
         $row = $this->db->single();
 
         $hashed_password = $row->password;
@@ -77,8 +80,8 @@ class User
 
     public function checkPassword($email, $password)
     {
-        $this->db->query('SELECT * from users where email = :email');
-        $this->db->bind(':email', $email);
+        $this->db->query("SELECT * from users where email = :email");
+        $this->db->bind(":email", $email);
         $row = $this->db->single();
 
         $hashed_password = $row->password;
@@ -91,9 +94,9 @@ class User
 
     public function getUserByEmail($email)
     {
-        $this->db->query('SELECT * FROM users WHERE email = :email');
+        $this->db->query("SELECT * FROM users WHERE email = :email");
         // Bind values
-        $this->db->bind(':email', $email);
+        $this->db->bind(":email", $email);
         $this->db->single();
 
         // Check row
@@ -106,18 +109,20 @@ class User
 
     public function getUserById($id)
     {
-        $this->db->query('SELECT * FROM users WHERE id = :id');
+        $this->db->query("SELECT * FROM users WHERE id = :id");
         // Bind values
-        $this->db->bind(':id', $id);
+        $this->db->bind(":id", $id);
         return $this->db->single();
     }
 
     public function updatePassword($data)
     {
-        $this->db->query('UPDATE users SET password = :password where email = :email');
+        $this->db->query(
+            "UPDATE users SET password = :password where email = :email"
+        );
         // Bind values
-        $this->db->bind(':password', $data['password']);
-        $this->db->bind(':email', $data['email']);
+        $this->db->bind(":password", $data["password"]);
+        $this->db->bind(":email", $data["email"]);
         // Execute
         if ($this->db->execute()) {
             return true;
@@ -128,8 +133,7 @@ class User
 
     public function getUsers()
     {
-        $this->db->query('SELECT * FROM users');
+        $this->db->query("SELECT * FROM users");
         return $this->db->resultSet();
-
     }
 }

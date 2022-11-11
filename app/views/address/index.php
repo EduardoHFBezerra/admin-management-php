@@ -1,6 +1,6 @@
 <?php require APP_ROOT . '/views/inc/header.php' ?>
 <?php flash('address_message'); ?>
-    <a href="<?php echo URL_ROOT; ?>/client" class="btn btn-light"><i class="fa fa-backward"></i> Back</a>
+    <a href="<?php echo URL_ROOT; ?>/client" class="btn btn-light"><i class="fa fa-backward"></i> voltar</a>
     <div class="row mb-3">
         <div class="col-md-6 title-subpage">
             <h3>Endereços</h3>
@@ -13,8 +13,9 @@
     </div>
     <div class="card card-body mb-3">
         <div class="card-block">
-            <div class="table">
-                <table class="table table-sm table-condensed">
+            <div class="table-responsive">
+                <table class="table table-sm caption-top">
+                    <caption>Lista de endereços</caption>
                     <thead>
                     <tr>
                         <th>Descrição</th>
