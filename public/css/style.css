@@ -1,4 +1,7 @@
-/*body {background: #FFF;}*/
+body {
+    background: #eee;
+}
+
 p.breakline {
     white-space: pre-wrap;
     word-break: normal;
@@ -13,11 +16,12 @@ p.breakline {
 }
 
 .title-subpage {
-    color: white;
+    color: #222;
 }
 .form-signin {
+    background-color: #fff;
     max-width: 380px;
-    padding: 15px;
+    padding: 25px 15px;
 }
 .form-signin input[type="email"] {
     margin-bottom: -1px;
@@ -28,4 +32,38 @@ p.breakline {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+}
+.gradient-custom-2 {
+    background-color: #0093E9;
+    background-image: linear-gradient(90deg, #80D0C7 0%, #0093E9 100%);
+    border: 0;
+}
+
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+}
+
+.project-list-table {
+    border-collapse: separate;
+    border-spacing: 0 12px
+}
+
+.project-list-table tr {
+    background-color: #fff
+}
+
+.table-nowrap td, .table-nowrap th {
+    white-space: nowrap;
+}
+.table-borderless>:not(caption)>*>* {
+    border-bottom-width: 0;
+}
+.table>:not(caption)>*>* {
+    padding: 0.75rem 0.75rem;
+    background-color: var(--bs-table-bg);
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
 }

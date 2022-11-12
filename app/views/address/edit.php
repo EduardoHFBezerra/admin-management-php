@@ -1,6 +1,5 @@
 <?php require APP_ROOT . '/views/inc/header.php' ?>
-    <a href="<?php echo URL_ROOT; ?>/client/<?php echo $data['clientId']?>/address/" class="btn btn-light"><i class="fa fa-backward"></i> voltar</a>
-    <div class="row">
+<div class="row">
     <div class="col-md-6 mx-auto">
         <div class="card card-body bg-light mt-5">
             <h3>Editar endereço</h3>
